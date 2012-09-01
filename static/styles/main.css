@@ -1,0 +1,224 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background: #050505;
+}
+
+p {
+    margin: 0px;
+}
+
+#wrapper {
+    height: 100%;
+}
+
+#plain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    top: 0px;
+    left: 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.back {
+    width: 10%;
+    height: 10%;
+    float: left;
+}
+
+.logo {
+    position: absolute;
+    left: 29.5%;
+    top: 13%;
+
+}
+
+.loginBox {
+    background: #383838;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    border: solid 3px #c8f327;
+    height: 150px;
+    width: 250px;
+    margin: 22% auto 0;
+}
+
+.loginInput {
+    background: #383838;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    border: solid 3px #c8f327;
+    display: block;
+    outline: none;
+    width: 205px;
+    height: 20px;
+    line-height: 15px;
+    font-family: arial;
+    color: #cbff00;
+    padding: 0px 5px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.loginButton {
+    font-size: 13px;
+    color: #cbff00;
+    font-family: arial;
+    font-weight: normal;
+    background: #383838;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    border: solid 3px #c8f327;
+    width: 104px;
+    margin-left: 14px;
+    height: 27px;
+    cursor: pointer;
+    margin-top: 27px;
+    padding: 0px;
+}
+
+.loginButton:active {
+    height: 25px;
+    width: 102px;
+    margin-left: 15px;
+    margin-right: 1px;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 75);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 75);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 75);
+}
+
+input::-webkit-input-placeholder {
+    color:#cbff00;
+}
+
+input:-moz-placeholder {
+    color:#cbff00;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+
+.copyrightBox {
+    font-family: arial;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 5px;
+    color: #727171;
+    text-shadow: 1px 1px 1px #000;
+    filter: dropshadow(color=#000, offx=1, offy=1);
+}
+
+.loginInputWrapper {
+    position: relative;
+    width: 221px;
+    margin: 15px auto 0px;
+}
+
+.errorTooltipContainer {
+    border: solid 2px #C8F327;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 75);
+    background: #383838;
+    padding: 3px 6px;
+    position: absolute;
+    color: #C8F327;
+    font-family: arial;
+    font-size: 15px;
+    left: 230px;
+    width: 110px;
+    height: 17px;
+    top: 0px;
+}
+
+.errorTooltipArrow {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    left: -13px;
+    top: 4px;
+    border-style: solid;
+    border-width: 7px;
+    border-color: transparent #383838 transparent transparent;
+}
+
+.errorTooltipborder {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    left: -16px;
+    top: 4px;
+    border-style: solid;
+    border-width: 7px;
+    border-color: transparent #C8F327 transparent transparent;
+}
+
+.backLoginBox {
+    margin-top: 15%;
+}
+
+.backLoginButton {
+    width: 221px;
+}
+
+.backLoginButton:active {
+    width: 219px;
+    height: 25px;
+    margin-top: 28px;
+    margin-left: 15px;
+    margin-right: 1px;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 75);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 75);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 75);
+}
+
+#notFoundLogo {
+    position: absolute;
+    top: 3%;
+    left: 2%;
+}
+
+#i404 {
+    position: absolute;
+    top: 30%;
+    left: 31%;
+}
+
+#notFound {
+    position: absolute;
+    right: 4%;
+    bottom: 5%;
+}

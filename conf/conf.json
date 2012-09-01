@@ -1,0 +1,15 @@
+{
+    "http_port":3000,
+    "http_host":"127.0.0.1",
+
+    "db_host":"codersrv",
+    "db_name":"privatte",
+    "db_user":"privatte",
+    "db_pass":"thelast",
+
+    "tcp_port":1337,
+    "tcp_host":"127.0.0.1",
+
+    "static_dir":"/static",
+    "views_dir":"/views"
+}

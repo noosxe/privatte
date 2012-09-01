@@ -1,0 +1,31 @@
+/**
+ * DB Module
+ *
+ */
+
+/* BEGIN INCLUDES */
+
+var mongoose = require('mongoose');
+var fx = require('../fx/fx.js');
+
+/* END INCLUDES */
+//--------------------------------------------------------------------------------
+/* BEGIN VARS */
+
+var conf;
+
+/* END VARS */
+//--------------------------------------------------------------------------------
+/* BEGIN EXPORTS */
+
+exports.init = function(c) {
+    fx.log.act('[db] initialising db');
+    conf = c;
+}
+
+exports.connect = function() {
+    fx.log.act('[db] connecting to mongo');
+    mongoose.connect('mongodb://' + conf.db_host + '/' + conf.db_name);
+};
+
+/* END EXPORTS */

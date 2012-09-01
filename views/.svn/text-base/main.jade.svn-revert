@@ -1,0 +1,14 @@
+!!! 5
+html(lang="en-US")(dir="ltr")
+    head
+        meta(http-equiv="Content-Type")(content="text/html; charset=UTF-8")
+        title= title
+        link(rel="stylesheet")(type="text/css")(href="/styles/main.css")
+        script(type="text/javascript")(src="/scripts/jquery.js")
+        script(type="text/javascript")(src="/socket.io/socket.io.js")
+        script(type="text/javascript")(src="/scripts/main.js")
+    body
+        header
+            nav
+        div#wrapper
+        footer

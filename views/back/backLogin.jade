@@ -1,0 +1,11 @@
+extends ../common/main
+
+block content
+    .loginBox.backLoginBox
+        form#loginForm(name="loginForm")(action="/admin/loginAction")(method="post")
+            .loginInputWrapper
+                input.loginInput(type="text")(name="username")(placeholder="Login")(autocomplete="off")(min="4")(max="30")(message="Please fill in")
+            .loginInputWrapper
+                input.loginInput(type="password")(name="password")(placeholder="Password")(autocomplete="off")(min="5")(max="30")(message="Please fill in")
+            input.loginButton.backLoginButton(type="submit")(name="login")(value="Login")
+    .copyrightBox Copyright &copy; 2012 Privatte
