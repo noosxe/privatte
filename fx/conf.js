@@ -28,7 +28,7 @@ var conf = JSON.parse(fs.readFileSync(conf_file, 'utf8'));
 /* BEGIN EXPORTS - */
 
 exports.__defineGetter__('http_port', function() {
-    return conf.http_port;
+    return process.env.PORT || conf.http_port;
 });
 
 exports.__defineGetter__('http_host', function() {

@@ -3,6 +3,16 @@
     "description": "Privatte Chat",
     "version": "0.1.0",
     "author": "Coder_",
-    "dependencies": {},
-    "devDependencies": {}
+    "dependencies": {
+        "express":"2.5.9",
+        "socket.io":"0.8.7",
+        "step":"0.0.5",
+        "jade":"0.19.0",
+        "mongoose":"2.4.1"
+    },
+    "devDependencies": {},
+    "engines": {
+        "node": "0.8.x",
+        "npm":  "1.1.x"
+    }
 }
