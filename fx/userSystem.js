@@ -8,7 +8,7 @@
 
 var mongoose = require('mongoose');
 var db = require('../fx/db.js');
-var rsa = require('rsa');
+//var rsa = require('rsa');
 var fs = require('fs');
 
 /* END INCLUDES */
@@ -26,7 +26,7 @@ exports.requiresLogin = function(req, res, next) {
     if (req.session.user)
         next();
     else {
-        var rsaPublic = fs.readFileSync("./pubkey", 'ascii');
+        //var rsaPublic = fs.readFileSync("./pubkey", 'ascii');
         //var rsaPrivate = fs.readFileSync("./privkey.pem", 'ascii');
         //var passphrase = "";
 
@@ -38,10 +38,10 @@ exports.requiresLogin = function(req, res, next) {
 
         //console.log("abcde");
         //console.log(plaintext_again);
-
+/*
         res.render('front/frontLogin', {
             hash: rsaPublic
-        });
+        });*/
     }
 };
 
