@@ -14,6 +14,6 @@ var conf = require('../fx/conf.js');
 /* BEGIN ACTIONS */
 
 fx.log.act('[db] connecting to mongo');
-mongoose.connect('mongodb://' + conf.db_user + ':' + conf.db_pass + '@' + conf.db_host + '/' + conf.db_name);
+//mongoose.connect('mongodb://' + conf.db_user + ':' + conf.db_pass + '@' + conf.db_host + '/' + conf.db_name);
 
 /* END ACTIONS */

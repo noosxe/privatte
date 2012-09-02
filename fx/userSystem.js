@@ -6,8 +6,8 @@
 
 /* BEGIN INCLUDES */
 
-var mongoose = require('mongoose');
-var db = require('../fx/db.js');
+//var mongoose = require('mongoose');
+//var db = require('../fx/db.js');
 //var rsa = require('rsa');
 var fs = require('fs');
 
