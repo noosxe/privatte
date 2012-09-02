@@ -17,6 +17,7 @@ var userSystem = require('../fx/userSystem.js');
 /* BEGIN ACTIONS */
 
 http.get('/', userSystem.requiresLogin, function(req, res) {
+    console.log('here');
     res.send('hello user');
 });
 

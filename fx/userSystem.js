@@ -26,22 +26,7 @@ exports.requiresLogin = function(req, res, next) {
     if (req.session.user)
         next();
     else {
-        //var rsaPublic = fs.readFileSync("./pubkey", 'ascii');
-        //var rsaPrivate = fs.readFileSync("./privkey.pem", 'ascii');
-        //var passphrase = "";
-
-        //var params = { publicKey: rsaPublic, privateKey: rsaPrivate, passphrase: passphrase };
-        //var keypair = rsa.createRsaKeypair(params);
-
-        //var ciphertext = keypair.encrypt("abcde", 'utf8', 'hex');
-        //var plaintext_again = keypair.decrypt(ciphertext, 'hex', 'utf8');
-
-        //console.log("abcde");
-        //console.log(plaintext_again);
-/*
-        res.render('front/frontLogin', {
-            hash: rsaPublic
-        });*/
+        res.render('front/frontLogin');
     }
 };
 

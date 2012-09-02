@@ -4,7 +4,7 @@ block content
     img.logo(src="/static/images/logo.png")(width="41%")
     .loginBox
         form#loginForm(name="loginForm")(action="/loginAction")(method="post")
-            input.loginHash(type="hidden")(value="#{hash}")
+            input.loginHash(type="hidden")(value="")
             .loginInputWrapper
                 input.loginInput(type="text")(name="username")(placeholder="Login")(autocomplete="off")(min="4")(max="30")(message="Please fill in")
             .loginInputWrapper

@@ -13,9 +13,9 @@ var conf = require('../fx/conf.js');
 
 /* BEGIN VARIABLES */
 
-var app = express.createServer();
+var app = express();
 //var RedisStore = require('connect-redis')(express);
-var io = require('socket.io').listen(app);
+//var io = require('socket.io').listen(app);
 
 /* END VARIABLES */
 

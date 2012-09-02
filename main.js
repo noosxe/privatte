@@ -7,8 +7,8 @@
 /* BEGIN INCLUDES */
 
 require('./fx/conf.js').root_dir = __dirname;
-require('./fx/db.js');
-require('./models/user.js');
+//require('./fx/db.js');
+//require('./models/user.js');
 require('./fx/http.js');
 require('./fx/preProcess.js');
 require('./fx/backEnd.js');
