@@ -97,6 +97,5 @@ var loginForm = {
 }
 
 $(function() {
-    renderBackground();
     loginForm.init("#loginForm");
 });

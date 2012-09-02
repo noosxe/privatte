@@ -23,15 +23,6 @@ http.get('/', userSystem.requiresLogin, function(req, res) {
 
 http.post('/loginAction', function(req, res) {
     console.log(req.body.password);
-/*
-    var rsaPublic = fs.readFileSync("./pubkey", 'ascii');
-    var rsaPrivate = fs.readFileSync("./privkey.pem", 'ascii');
-
-    var params = { publicKey: rsaPublic, privateKey: rsaPrivate, passphrase: "" };
-    var keypair = rsa.createRsaKeypair(params);
-    var plaintext_again = keypair.decrypt(req.body.password, 'hex', 'utf8');
-    console.log(plaintext_again);
-*/
     res.send(JSON.stringify(new Buffer("Hello World").toString("base64")));
 });
 
