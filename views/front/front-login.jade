@@ -1,0 +1,14 @@
+extends ../common/main
+
+block content
+    img.logo(src="/static/images/logo.png")(width="41%")
+    .login-box
+        form#login-form(name="login-form")(action="/login-action")(method="post")
+            input.login-hash(type="hidden")(value="")
+            .login-input-wrapper
+                input.login-input(type="text")(name="username")(placeholder="Login")(autocomplete="off")(min="4")(max="30")(message="Please fill in")
+            .login-input-wrapper
+                input.login-input(type="password")(name="password")(placeholder="Password")(autocomplete="off")(min="5")(max="30")(message="Please fill in")
+            input.login-button(type="submit")(name="login")(value="Login")
+            input.login-button(type="button")(name="restore")(value="Forget Pass")
+    .copyright-box Copyright &copy; 2012 Privatte

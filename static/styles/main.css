@@ -54,7 +54,7 @@ p {
 
 }
 
-.loginBox {
+.login-box {
     background: #383838;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -68,7 +68,7 @@ p {
     margin: 22% auto 0;
 }
 
-.loginInput {
+.login-input {
     background: #383838;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -89,7 +89,7 @@ p {
     font-weight: normal;
 }
 
-.loginButton {
+.login-button {
     font-size: 13px;
     color: #cbff00;
     font-family: arial;
@@ -110,7 +110,7 @@ p {
     padding: 0px;
 }
 
-.loginButton:active {
+.login-button:active {
     height: 25px;
     width: 102px;
     margin-left: 15px;
@@ -136,7 +136,7 @@ input:focus:-moz-placeholder {
     color: transparent;
 }
 
-.copyrightBox {
+.copyright-box {
     font-family: arial;
     font-size: 13px;
     font-weight: normal;
@@ -147,13 +147,13 @@ input:focus:-moz-placeholder {
     filter: dropshadow(color=#000, offx=1, offy=1);
 }
 
-.loginInputWrapper {
+.login-input-wrapper {
     position: relative;
     width: 221px;
     margin: 15px auto 0px;
 }
 
-.errorTooltipContainer {
+.error-tooltip-container {
     border: solid 2px #C8F327;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -171,9 +171,10 @@ input:focus:-moz-placeholder {
     width: 110px;
     height: 17px;
     top: 0px;
+    text-align: center;
 }
 
-.errorTooltipArrow {
+.error-tooltip-arrow {
     width: 0px;
     height: 0px;
     position: absolute;
@@ -184,7 +185,7 @@ input:focus:-moz-placeholder {
     border-color: transparent #383838 transparent transparent;
 }
 
-.errorTooltipborder {
+.error-tooltip-border {
     width: 0px;
     height: 0px;
     position: absolute;
@@ -195,15 +196,15 @@ input:focus:-moz-placeholder {
     border-color: transparent #C8F327 transparent transparent;
 }
 
-.backLoginBox {
+.back-login-box {
     margin-top: 15%;
 }
 
-.backLoginButton {
+.back-login-button {
     width: 221px;
 }
 
-.backLoginButton:active {
+.back-login-button:active {
     width: 219px;
     height: 25px;
     margin-top: 28px;
@@ -214,7 +215,7 @@ input:focus:-moz-placeholder {
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 75);
 }
 
-#notFoundLogo {
+#not-found-logo {
     position: absolute;
     top: 3%;
     left: 2%;
@@ -226,7 +227,7 @@ input:focus:-moz-placeholder {
     left: 31%;
 }
 
-#notFound {
+#not-found {
     position: absolute;
     right: 4%;
     bottom: 5%;

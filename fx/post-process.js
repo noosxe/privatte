@@ -13,7 +13,7 @@ var http = require('../fx/http.js');
 /* BEGIN ACTIONS */
 
 http.all('*', function(req, res) {
-    res.render('common/notFound', 404);
+	res.render('common/not-found', 404);
 });
 
 /* END ACTIONS */

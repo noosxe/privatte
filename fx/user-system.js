@@ -16,23 +16,23 @@ var fs = require('fs');
 /* BEGIN EXPORTS */
 
 exports.authAdmin = function(username, password) {
-    var user = mongoose.model('user');
+	var user = mongoose.model('user');
     user.findOne({ userName: username }, function (err, doc){
         console.log(doc);
     });
 };
 
 exports.requiresLogin = function(req, res, next) {
-    if (req.session.user)
-        next();
-    else {
-        res.render('front/frontLogin');
-    }
+	if (!req.session.user)
+		next();
+	else {
+		res.redirect('/login?redirect=');
+	}
 };
 
 exports.requiresAdminLogin = function(req, res, next) {
     if (req.session.user && req.session.user.level < 10) // levels lower than 10 are allowed to enter admin area
         next();
     else
-        res.render('back/backLogin');
+        res.render('back/back-login');
 }

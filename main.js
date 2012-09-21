@@ -8,12 +8,11 @@
 
 require('./fx/conf.js').root_dir = __dirname;
 //require('./fx/db.js');
-//require('./models/user.js');
 require('./fx/http.js');
-require('./fx/preProcess.js');
-require('./fx/backEnd.js');
-require('./fx/frontEnd.js');
-require('./fx/postProcess.js');
+//require('./fx/pre-process.js');
+//require('./fx/back-end.js');
+require('./fx/front-end.js');
+require('./fx/post-process.js');
 
 /* END INCLUDES */
 //--------------------------------------------------------------------------------
@@ -21,13 +20,3 @@ require('./fx/postProcess.js');
 
 
 /* END ACTIONS */
-
-
-/* sockets */
-/*
-
-io.sockets.on('connection', function(socket) {
-    
-});
-
-*/

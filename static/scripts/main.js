@@ -1,12 +1,10 @@
-/*
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect(window.location.host);
 
 var connected = false;
 
 socket.on('connect', function() {
     connected = true;
 });
-*/
 
 var loginForm = {
     init: function(selector) {
@@ -44,7 +42,7 @@ var loginForm = {
         var validate = function($form) {
             var valid = true;
 
-            $('.loginInputWrapper', $form).each(function() {
+            $('.login-input-wrapper', $form).each(function() {
                 var input = $('input', this);
                 var type = input.attr('type');
                 var value = input.val();
@@ -52,21 +50,21 @@ var loginForm = {
                 var max = parseInt(input.attr('max'));
 
                 var showErrorTooltip = function(container) {
-                    if ($('.errorTooltipContainer', container).length > 0) {
-                        $('.errorTooltipContainer:first', container).hide().fadeIn('fast');
+                    if ($('.error-tooltip-container', container).length > 0) {
+                        $('.error-tooltip-container:first', container).hide().fadeIn('fast');
                     } else {
                         var message = $('input', container).attr('message');
-                        var tooltip = $('<div class="errorTooltipContainer" style="display:none"><div class="errorTooltipborder"></div><div class="errorTooltipArrow"></div><span class="tooltipMessage">' + message + '</span></div>')
+                        var tooltip = $('<div class="error-tooltip-container" style="display:none"><div class="error-tooltip-border"></div><div class="error-tooltip-arrow"></div><span class="tooltip-message">' + message + '</span></div>')
                         $(container).append(tooltip);
                         tooltip.fadeIn('fast');
                     }
-                }
+                };
 
                 var hideErrorTooltip = function(container) {
-                    $('.errorTooltipContainer', container).fadeOut('fast', function() {
+                    $('.error-tooltip-container', container).fadeOut('fast', function() {
                         $(this).remove();
                     })
-                }
+                };
 
                 switch(type) {
                     case 'text': {
@@ -97,5 +95,5 @@ var loginForm = {
 }
 
 $(function() {
-    loginForm.init("#loginForm");
+    loginForm.init("#login-form");
 });
