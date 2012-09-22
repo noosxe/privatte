@@ -294,8 +294,7 @@ input:focus:-moz-placeholder {
 	bottom: 72px;
 	left: 3px;
 	right: 285px;
-	overflow-y: scroll;
-	overflow-x: hidden;
+	outline: none;
 }
 
 .right {
@@ -414,8 +413,8 @@ input:focus:-moz-placeholder {
 }
 
 .message-thread {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0 0 20px 0;
 }
 
 .message-thread li {
@@ -423,4 +422,20 @@ input:focus:-moz-placeholder {
 	color: #c7f228;
 	font-family: arianamu, Arial;
 	padding: 0 0 0 5px;
+}
+
+.helper {
+	height: 20px;
+}
+
+.jspVerticalBar {
+	width: 11px;
+}
+
+.jspTrack {
+	background-color: #4C4C4C;
+}
+
+.jspDrag {
+	background-color: #c7f228;
 }

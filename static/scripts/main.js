@@ -86,10 +86,15 @@ var loginForm = {
     }
 };
 
+var newMessage = false;
+
 function messageReceived(message, sender) {
+	//$('.helper').remove();
 	var li = $('<li></li>').text(sender + ': ' + message);
-	console.log(li);
 	$('.message-thread').append(li);
+	newMessage = true;
+	//var helper = $('<li> </li>').addClass('helper');
+	//$('.message-thread').append(helper);
 }
 
 function sendMessage() {
@@ -115,5 +120,16 @@ $(function() {
 		if(e.keyCode == 13){
 			sendMessage();
 		}
-	})
+	});
+
+	$('.left').bind('jsp-initialised', function() {
+		setInterval(function () {
+			if (!newMessage) return;
+			var api = $('.left').data('jsp');
+			if (api) api.scrollToBottom(false);
+			newMessage = false;
+		}, 300);
+	}).jScrollPane({
+		autoReinitialise: true
+	});
 });
