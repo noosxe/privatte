@@ -17,7 +17,7 @@ var requiresLogin = userSystem.requiresLogin;
 /* BEGIN ACTIONS */
 
 http.get('/', requiresLogin, function(req, res) {
-    res.redirect('/home');
+    res.redirect('/thread');
 });
 
 http.get('/login', function(req, res) {
@@ -30,8 +30,19 @@ http.post('/login-action', function(req, res) {
 
 // --
 
-http.get('/home', requiresLogin, function(req, res) {
-	res.render('front/front');
+http.get('/thread', requiresLogin, function(req, res) {
+	res.render('front/front-thread');
 });
+
+// --
+
+http.on('connection', function (socket) {
+	socket.on('new-message', function (data) {
+		var message = data.message;
+		http.io.sockets.emit('new-message', { message: message, sender: 'just me'});
+	});
+});
+
+
 
 /* END ACTIONS */

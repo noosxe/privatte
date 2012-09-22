@@ -23,13 +23,6 @@ io.configure(function () {
 	io.set("polling duration", 10);
 });
 
-io.sockets.on('connection', function (socket) {
-	socket.emit('news', { hello: 'world' });
-	socket.on('my other event', function (data) {
-		console.log(data);
-	});
-});
-
 /* END VARIABLES */
 
 /* BEGIN ACTIONS */
@@ -75,6 +68,8 @@ server.listen(conf.http_port);
 
 /* BEGIN EXPORTS */
 
+exports.io = io;
+
 exports.get = function(path) {
 	fx.log.act('[http] registering get callback for path ' + path);
 	app.get.apply(app, arguments);
@@ -88,6 +83,10 @@ exports.post = function(path) {
 exports.all = function(path) {
 	fx.log.act('[http] registering all callback for path ' + path);
 	app.all.apply(app, arguments);
+};
+
+exports.on = function() {
+	io.sockets.on.apply(io.sockets, arguments);
 };
 
 /* END EXPORTS */

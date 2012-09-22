@@ -1,9 +1,13 @@
-var socket = io.connect(window.location.host);
+var socket = io.connect('http://' + window.location.host);
 
 var connected = false;
 
 socket.on('connect', function() {
-    connected = true;
+	connected = true;
+});
+
+socket.on('new-message', function(data) {
+	messageReceived(data.message, data.sender);
 });
 
 var loginForm = {
@@ -82,6 +86,34 @@ var loginForm = {
     }
 };
 
+function messageReceived(message, sender) {
+	var li = $('<li></li>').text(sender + ': ' + message);
+	console.log(li);
+	$('.message-thread').append(li);
+}
+
+function sendMessage() {
+	var input = $('.chat-input');
+	var message = input.val();
+	message = message.trim();
+	if (message.length == 0) return;
+	input.val('');
+	socket.emit('new-message', { message: message });
+}
+
 $(function() {
-    loginForm.init("#login-form");
+	// login form
+	if ($('#login-form'))
+		loginForm.init("#login-form");
+
+	// thread page
+	$('.send-button').on('click', function() {
+		sendMessage();
+	});
+
+	$('.chat-input').on('keydown', function(e) {
+		if(e.keyCode == 13){
+			sendMessage();
+		}
+	})
 });
