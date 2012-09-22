@@ -465,3 +465,9 @@ input:focus:-moz-placeholder {
 .red-lamp-on {
 	background: url('/static/images/red-lamp-on.png') no-repeat;
 }
+
+.image-preloader {
+	position: absolute;
+	top: -5000px;
+	left: -5000px;
+}

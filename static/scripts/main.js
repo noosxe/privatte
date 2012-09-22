@@ -19,6 +19,21 @@ socket.on('disconnect', function() {
 	connectionStateChanged();
 });
 
+socket.on('connect_failed', function () {
+	connected = false;
+	connectionStateChanged();
+});
+
+socket.on('error', function () {
+	connected = false;
+	connectionStateChanged();
+});
+
+socket.on('reconnect_failed', function () {
+	connected = false;
+	connectionStateChanged();
+});
+
 socket.on('new-message', function(data) {
 	messageReceived(data.message, data.sender);
 });
