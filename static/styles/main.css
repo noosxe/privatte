@@ -262,12 +262,9 @@ input:focus:-moz-placeholder {
 	-moz-border-radius-bottomleft: 3px;
 	border-bottom-right-radius: 3px;
 	border-bottom-left-radius: 3px;
-	-webkit-box-shadow:  0px 1px 3px 1px rgba(c, c, c, 0.5);
-	-moz-box-shadow:  0px 1px 3px 1px rgba(c, c, c, 0.5);
-	box-shadow:  0px 1px 3px 1px rgba(c, c, c, 0.5);
-	-webkit-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
-	-moz-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
-	box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
+	-webkit-box-shadow: inset 0px 1px 3px 1px #000;
+	-moz-box-shadow: inset 0px 1px 3px 1px #000;
+	box-shadow: inset 0px 1px 3px 1px #000;
 }
 
 .footer {
@@ -286,12 +283,9 @@ input:focus:-moz-placeholder {
 	-moz-border-radius-topleft: 3px;
 	border-top-right-radius: 3px;
 	border-top-left-radius: 3px;
-	-webkit-box-shadow:  0px 1px 3px 1px rgba(c, c, c, 0.5);
-	-moz-box-shadow:  0px 1px 3px 1px rgba(c, c, c, 0.5);
-	box-shadow:  0px 1px 3px 1px rgba(c, c, c, 0.5);
-	-webkit-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
-	-moz-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
-	box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
+	-webkit-box-shadow: inset 0px 1px 3px 1px #000;
+	-moz-box-shadow: inset 0px 1px 3px 1px #000;
+	box-shadow: inset 0px 1px 3px 1px #000;
 }
 
 .left {
@@ -318,12 +312,9 @@ input:focus:-moz-placeholder {
 	-moz-border-radius-bottomleft: 3px;
 	border-top-left-radius: 3px;
 	border-bottom-left-radius: 3px;
-	-webkit-box-shadow:  1px 0px 3px 1px rgba(c, c, c, 0.5);
-	-moz-box-shadow:  1px 0px 3px 1px rgba(c, c, c, 0.5);
-	box-shadow:  1px 0px 3px 1px rgba(c, c, c, 0.5);
-	-webkit-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
-	-moz-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
-	box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
+	-webkit-box-shadow: inset 0px 1px 3px 1px #000;
+	-moz-box-shadow: inset 0px 1px 3px 1px #000;
+	box-shadow: inset 0px 1px 3px 1px #000;
 }
 
 .footer-content {
@@ -341,9 +332,9 @@ input:focus:-moz-placeholder {
 	height: 26px;
 	left: 65px;
 	right: 337px;
-	-webkit-box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
-	-moz-box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
-	box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
+	-webkit-box-shadow:  0px 0px 1px 1px #000;
+	-moz-box-shadow:  0px 0px 1px 1px #000;
+	box-shadow:  0px 0px 1px 1px #000;
 }
 
 .chat-input {
@@ -356,6 +347,7 @@ input:focus:-moz-placeholder {
 	font-size: 14px;
 	padding: 0 4px;
 	font-family: arianamu, Arial;
+	outline: none;
 }
 
 .send-button {
@@ -366,11 +358,36 @@ input:focus:-moz-placeholder {
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
-	-webkit-box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
-	-moz-box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
-	box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
+	-webkit-box-shadow:  0px 0px 1px 1px #000;
+	-moz-box-shadow:  0px 0px 1px 1px #000;
+	box-shadow:  0px 0px 1px 1px #000;
 	position: absolute;
 	top: 18px;
 	right: 300px;
 	cursor: pointer;
+}
+
+.send-button:active {
+	background: url('/static/images/send-button-pressed.png') no-repeat 4px 2px;
+}
+
+.smile-button {
+	width: 26px;
+	height: 26px;
+	background: url('/static/images/smile-button.png') no-repeat 2px 1px;
+	border: solid 2px #c7f228;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-box-shadow:  0px 0px 1px 1px #000;
+	-moz-box-shadow:  0px 0px 1px 1px #000;
+	box-shadow:  0px 0px 1px 1px #000;
+	position: absolute;
+	top: 18px;
+	left: 29px;
+	cursor: pointer;
+}
+
+.smile-button:active {
+	background: url('/static/images/smile-button-pressed.png') no-repeat 2px 1px;
 }
