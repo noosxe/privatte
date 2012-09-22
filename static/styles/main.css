@@ -391,3 +391,22 @@ input:focus:-moz-placeholder {
 .smile-button:active {
 	background: url('/static/images/smile-button-pressed.png') no-repeat 2px 1px;
 }
+
+.header-content {
+	height: 100%;
+	position: relative;
+}
+
+.exit-button {
+	width: 26px;
+	height: 26px;
+	background: url('/static/images/exit-button.png') no-repeat 2px 1px;
+	position: absolute;
+	top: 16px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.exit-button:active {
+	background: url('/static/images/exit-button-pressed.png') no-repeat 2px 1px;
+}
