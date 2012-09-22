@@ -13,15 +13,16 @@ var conf = require('../fx/conf.js');
 
 /* BEGIN VARIABLES */
 
-var app = express()
-	, http = require('http')
-	, server = http.createServer(app)
-	, io = require('socket.io').listen(server);
+var http = require('http');
+var connect = require('connect');
+var express = require('express');
+var app = express();
 
-io.configure(function () {
-	io.set("transports", ["xhr-polling"]);
-	io.set("polling duration", 10);
-});
+
+
+
+var cookieParser = express.cookieParser('very secret words');
+var sessionStore = new connect.middleware.session.MemoryStore();
 
 /* END VARIABLES */
 
@@ -31,8 +32,8 @@ fx.log.act('[http] initialising http');
 
 app.configure(function() {
 	app.use(express.bodyParser());
-	app.use(express.cookieParser('shhhh, very secret'));
-	app.use(express.session());
+	app.use(cookieParser);
+	app.use(express.session({ store: sessionStore }));
 	app.use(express.methodOverride());
 
 
@@ -59,7 +60,18 @@ app.configure('production', function() {
 	app.use(express.errorHandler());
 });
 
+var server = http.createServer(app)
+var io = require('socket.io').listen(server);
+
+io.configure(function () {
+	io.set("transports", ["xhr-polling"]);
+	io.set("polling duration", 10);
+});
+
 app.use(app.router);
+
+var SessionSockets = require('session.socket.io');
+var sessionSockets = new SessionSockets(io, sessionStore, cookieParser);
 
 fx.log.act('[http] listening for HTTP requests on ' + conf.http_host + ':' + conf.http_port);
 server.listen(conf.http_port);
@@ -86,7 +98,7 @@ exports.all = function(path) {
 };
 
 exports.on = function() {
-	io.sockets.on.apply(io.sockets, arguments);
+	sessionSockets.on.apply(sessionSockets, arguments);
 };
 
 /* END EXPORTS */

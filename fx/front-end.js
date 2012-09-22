@@ -36,8 +36,9 @@ http.get('/thread', requiresLogin, function(req, res) {
 
 // --
 
-http.on('connection', function (socket) {
+http.on('connection', function (err, socket, session) {
 	socket.on('new-message', function (data) {
+
 		var message = data.message;
 		http.io.sockets.emit('new-message', { message: message, sender: socket.id});
 	});
