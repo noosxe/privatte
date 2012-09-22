@@ -17,19 +17,7 @@ var loginForm = {
             },
             beforeSubmit: function(arr, $form) {
                 var valid = validate($form);
-
                 if (!valid) return false;
-
-                var pass = $("input[type=password]").val();
-                //var pass = sha1($("input[type=password]").val());
-                pass = encryptText(pass);
-
-                for (var i in arr) {
-                    var val = arr[i];
-                    if (val['name'] == 'password') {
-                        val['value'] = pass;
-                    }
-                }
             },
             success: function(responseText, statusText, xhr, $form) {
                 console.log(statusText);
@@ -92,7 +80,7 @@ var loginForm = {
             return valid;
         }
     }
-}
+};
 
 $(function() {
     loginForm.init("#login-form");

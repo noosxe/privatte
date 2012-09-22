@@ -75,19 +75,19 @@ server.listen(conf.http_port);
 
 /* BEGIN EXPORTS */
 
-exports.get = function(path, callback1, callback2) {
+exports.get = function(path) {
 	fx.log.act('[http] registering get callback for path ' + path);
-	app.get(path, callback1, callback2);
+	app.get.apply(app, arguments);
 };
 
-exports.post = function(path, callback) {
+exports.post = function(path) {
 	fx.log.act('[http] registering post callback for path ' + path);
-	app.post(path, callback);
+	app.post.apply(app, arguments);
 };
 
-exports.all = function(path, callback) {
+exports.all = function(path) {
 	fx.log.act('[http] registering all callback for path ' + path);
-	app.all(path, callback);
+	app.all.apply(app, arguments);
 };
 
 /* END EXPORTS */
