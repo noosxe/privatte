@@ -10,6 +10,12 @@ body {
 	overflow: hidden;
 }
 
+@font-face {
+	font-family: arianamu;
+	letter-spacing: 1px;
+	src: url('/static/fonts/arnamu-webfont.ttf'), url('/static/fonts/arnamu-webfont.eot'); /* IE9 */
+}
+
 p {
     margin: 0px;
 }
@@ -34,12 +40,12 @@ p {
     z-index: 1000;
     top: 0px;
     left: 0px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    /*-webkit-touch-callout: none;*/
+    /*-webkit-user-select: none;*/
+    /*-khtml-user-select: none;*/
+    /*-moz-user-select: none;*/
+    /*-ms-user-select: none;*/
+    /*user-select: none;*/
 }
 
 .back {
@@ -289,9 +295,11 @@ input:focus:-moz-placeholder {
 }
 
 .left {
-	height: 100%;
-	width: 80%;
-	display: inline-block;
+	position: absolute;
+	top: 55px;
+	bottom: 72px;
+	left: 3px;
+	right: 285px;
 }
 
 .right {
@@ -316,4 +324,53 @@ input:focus:-moz-placeholder {
 	-webkit-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
 	-moz-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
 	box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
+}
+
+.footer-content {
+	height: 100%;
+	position: relative;
+}
+
+.chat-input-wrapper {
+	border: solid 2px #c7f228;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	position: absolute;
+	top: 18px;
+	height: 26px;
+	left: 65px;
+	right: 337px;
+	-webkit-box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
+	-moz-box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
+	box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
+}
+
+.chat-input {
+	background: none;
+	border: none;
+	width: 99%;
+	height: 100%;
+	color: #c7f228;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 0 4px;
+	font-family: arianamu, Arial;
+}
+
+.send-button {
+	width: 26px;
+	height: 26px;
+	background: url('/static/images/send-button.png') no-repeat 4px 2px;
+	border: solid 2px #c7f228;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
+	-moz-box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
+	box-shadow:  0px 0px 1px 1px rgba(c, c, c, 0.5);
+	position: absolute;
+	top: 18px;
+	right: 300px;
+	cursor: pointer;
 }
