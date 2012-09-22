@@ -234,37 +234,22 @@ input:focus:-moz-placeholder {
     bottom: 5%;
 }
 
+.chat-page {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
 .header {
-	height: 10%;
-}
-
-.center {
-	height: 80%;
-}
-
-.footer {
-	height: 12%;
-}
-
-.left {
-	height: 100%;
-	width: 80%;
-	display: inline-block;
-}
-
-.right {
-	height: 100%;
-	width: 20%;
-	display: inline-block;
-}
-
-.header-content {
+	height: 53px;
+	position: absolute;
+	top: -5px;
+	left: 3px;
+	right: 3px;
 	border-left: solid 2px #c7f228;
 	border-right: solid 2px #c7f228;
 	border-bottom: solid 2px #c7f228;
-	height: 100%;
 	background: #4c4c4c;
-	margin: -5px 3px 5px 3px;
 	-webkit-border-bottom-right-radius: 3px;
 	-webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-bottomright: 3px;
@@ -279,13 +264,16 @@ input:focus:-moz-placeholder {
 	box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
 }
 
-.footer-content {
+.footer {
+	bottom: -5px;
+	height: 70px;
+	left: 3px;
+	right: 3px;
+	position: absolute;
 	border-left: solid 2px #c7f228;
 	border-right: solid 2px #c7f228;
 	border-top: solid 2px #c7f228;
-	height: 100%;
 	background: #4c4c4c;
-	margin: 0 3px 0 3px;
 	-webkit-border-top-right-radius: 3px;
 	-webkit-border-top-left-radius: 3px;
 	-moz-border-radius-topright: 3px;
@@ -298,15 +286,23 @@ input:focus:-moz-placeholder {
 	-webkit-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
 	-moz-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
 	box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
-	margin-bottom: -10px;
 }
 
-.right-content {
+.left {
+	height: 100%;
+	width: 80%;
+	display: inline-block;
+}
+
+.right {
+	position: absolute;
+	right: -5px;
+	width: 283px;
+	top: 55px;
+	bottom: 72px;
 	border-left: solid 2px #c7f228;
 	border-bottom: solid 2px #c7f228;
 	border-top: solid 2px #c7f228;
-	margin-top: 3%;
-	height: 95%;
 	background: #4c4c4c;
 	-webkit-border-top-left-radius: 3px;
 	-webkit-border-bottom-left-radius: 3px;
@@ -320,5 +316,4 @@ input:focus:-moz-placeholder {
 	-webkit-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
 	-moz-box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
 	box-shadow: inset 0px 1px 3px 1px rgba(c, c, c, 0.5);
-	margin-right: -20px;
 }
