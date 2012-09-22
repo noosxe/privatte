@@ -439,3 +439,29 @@ input:focus:-moz-placeholder {
 .jspDrag {
 	background-color: #c7f228;
 }
+
+.green-lamp {
+	background: url('/static/images/green-lamp-off.png') no-repeat;
+	width: 11px;
+	height: 11px;
+	position: absolute;
+	top: 8px;
+	right: 40px;
+}
+
+.green-lamp-on {
+	background: url('/static/images/green-lamp-on.png') no-repeat;
+}
+
+.red-lamp {
+	background: url('/static/images/red-lamp-off.png') no-repeat;
+	width: 11px;
+	height: 11px;
+	position: absolute;
+	top: 8px;
+	right: 19px;
+}
+
+.red-lamp-on {
+	background: url('/static/images/red-lamp-on.png') no-repeat;
+}

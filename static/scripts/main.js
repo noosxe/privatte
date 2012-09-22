@@ -2,8 +2,21 @@ var socket = io.connect('http://' + window.location.host);
 
 var connected = false;
 
+connectionStateChanged();
+
 socket.on('connect', function() {
 	connected = true;
+	connectionStateChanged();
+});
+
+socket.on('reconnect', function () {
+	connected = true;
+	connectionStateChanged();
+});
+
+socket.on('disconnect', function() {
+	connected = false;
+	connectionStateChanged();
 });
 
 socket.on('new-message', function(data) {
@@ -86,6 +99,16 @@ var loginForm = {
     }
 };
 
+function connectionStateChanged() {
+	if (connected) {
+		$('.green-lamp').addClass('green-lamp-on');
+		$('.red-lamp').removeClass('red-lamp-on');
+	} else {
+		$('.green-lamp').removeClass('green-lamp-on');
+		$('.red-lamp').addClass('red-lamp-on');
+	}
+}
+
 var newMessage = false;
 
 function messageReceived(message, sender) {
@@ -98,6 +121,7 @@ function messageReceived(message, sender) {
 }
 
 function sendMessage() {
+	if (!connected) return;
 	var input = $('.chat-input');
 	var message = input.val();
 	message = message.trim();
