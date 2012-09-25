@@ -25,7 +25,17 @@ http.get('/login', function(req, res) {
 });
 
 http.post('/login-action', function(req, res) {
-    res.end("cool");
+	userSystem.authUser(req.body.username, req.body.password, function(user) {
+		if (user != null) {
+			req.session.regenerate(function(){
+				req.session.user = user;
+				res.redirect('/thread');
+			});
+		} else {
+			req.session.login_error = true;
+			res.redirect('/login');
+		}
+	});
 });
 
 // --
@@ -40,7 +50,7 @@ http.on('connection', function (err, socket, session) {
 	socket.on('new-message', function (data) {
 
 		var message = data.message;
-		http.io.sockets.emit('new-message', { message: message, sender: socket.id});
+		http.io.sockets.emit('new-message', { message: message, sender: session.user.username});
 	});
 });
 

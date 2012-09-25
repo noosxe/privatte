@@ -45,6 +45,6 @@ exports.__defineGetter__('log', function() {
 exports.exit = function() {
     log.act('exiting');
     process.exit();
-}
+};
 
 /* END EXPORTS */

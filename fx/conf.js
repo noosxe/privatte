@@ -36,19 +36,38 @@ exports.__defineGetter__('http_host', function() {
 });
 
 exports.__defineGetter__('db_host', function() {
-    return conf.db_host;
+	if (process.env.NODE_ENV == "production")
+        return conf.db.production.db_host;
+	else
+		return conf.db.local.db_host;
+});
+
+exports.__defineGetter__('db_port', function() {
+	if (process.env.NODE_ENV == "production")
+		return conf.db.production.db_port;
+	else
+		return conf.db.local.db_port;
 });
 
 exports.__defineGetter__('db_name', function() {
-    return conf.db_name;
+	if (process.env.NODE_ENV == "production")
+		return conf.db.production.db_name;
+	else
+		return conf.db.local.db_name;
 });
 
 exports.__defineGetter__('db_user', function() {
-   return conf.db_user;
+	if (process.env.NODE_ENV == "production")
+		return conf.db.production.db_user;
+	else
+		return conf.db.local.db_user;
 });
 
 exports.__defineGetter__('db_pass', function() {
-    return conf.db_pass;
+	if (process.env.NODE_ENV == "production")
+		return conf.db.production.db_pass;
+	else
+		return conf.db.local.db_pass;
 });
 
 exports.__defineGetter__('tcp_port', function() {
@@ -73,7 +92,7 @@ exports.__defineGetter__('root_dir', function() {
 
 exports.__defineSetter__('root_dir', function(value) {
     root_dir = value;
-})
+});
 
 exports.reload_conf = function() {
     fx.log('[conf] reloading configuration file');

@@ -5,7 +5,6 @@
 
 /* BEGIN INCLUDES */
 
-var mongoose = require('mongoose');
 var fx = require('../fx/fx.js');
 var conf = require('../fx/conf.js');
 
@@ -14,6 +13,20 @@ var conf = require('../fx/conf.js');
 /* BEGIN ACTIONS */
 
 fx.log.act('[db] connecting to mongo');
-//mongoose.connect('mongodb://' + conf.db_user + ':' + conf.db_pass + '@' + conf.db_host + '/' + conf.db_name);
+
+var mongo = require('mongodb'),
+	Server = mongo.Server,
+	Db = mongo.Db;
+
+var server = new Server(conf.db_host, conf.db_port, {auto_reconnect: true});
+var db = new Db(conf.db_name, server);
+
+db.open(function(err, db) {
+	if(!err) {
+		console.log("successfully connected to mongo");
+	}
+});
+
+exports.db = db;
 
 /* END ACTIONS */

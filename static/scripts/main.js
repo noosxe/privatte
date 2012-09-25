@@ -52,7 +52,7 @@ var loginForm = {
                 if (!valid) return false;
             },
             success: function(responseText, statusText, xhr, $form) {
-                console.log(statusText);
+	            console.log(responseText);
             },
             error: function() {
                 console.log("communication error");
@@ -148,7 +148,7 @@ function sendMessage() {
 $(function() {
 	// login form
 	if ($('#login-form'))
-		loginForm.init("#login-form");
+		//loginForm.init("#login-form");
 
 	// thread page
 	$('.send-button').on('click', function() {

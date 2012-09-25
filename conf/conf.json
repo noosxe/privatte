@@ -2,10 +2,22 @@
     "http_port":3000,
     "http_host":"127.0.0.1",
 
-    "db_host":"codersrv",
-    "db_name":"privatte",
-    "db_user":"privatte",
-    "db_pass":"thelast",
+	"db":{
+		"local":{
+			"db_host":"localhost",
+			"db_port":27017,
+			"db_name":"privatte",
+			"db_user":"privatte",
+			"db_pass":""
+		},
+		"production":{
+			"db_host":"ds037407.mongolab.com",
+			"db_port":37407,
+			"db_name":"heroku_app7225580",
+			"db_user":"privatte",
+			"db_pass":"12345"
+		}
+	},
 
     "tcp_port":1337,
     "tcp_host":"127.0.0.1",

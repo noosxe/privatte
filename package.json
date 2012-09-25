@@ -10,7 +10,8 @@
         "socket.io":"0.9.10",
         "step":"0.0.5",
 	    "connect":"2.4.6",
-	    "session.socket.io":"0.1.1"
+	    "session.socket.io":"0.1.1",
+	    "bcrypt":"0.7.2"
     },
     "devDependencies": {},
     "engines": {

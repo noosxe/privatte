@@ -6,27 +6,29 @@
 
 /* BEGIN INCLUDES */
 
-//var mongoose = require('mongoose');
-//var db = require('../fx/db.js');
-//var rsa = require('rsa');
-var fs = require('fs');
+var db = require('../fx/db.js').db;
 
 /* END INCLUDES */
 
 /* BEGIN EXPORTS */
 
 exports.authAdmin = function(username, password) {
-	var user = mongoose.model('user');
-    user.findOne({ userName: username }, function (err, doc){
-        console.log(doc);
-    });
+
+};
+
+exports.authUser = function(username, password, callback) {
+	db.collection('users', function(error, coll) {
+		coll.findOne({username: username}, function(err, item) {
+			callback(item);
+		});
+	});
 };
 
 exports.requiresLogin = function(req, res, next) {
 	if (req.session.user)
 		next();
 	else {
-		res.redirect('/login?redirect=');
+		res.redirect('/login');
 	}
 };
 
@@ -35,4 +37,4 @@ exports.requiresAdminLogin = function(req, res, next) {
         next();
     else
         res.render('back/back-login');
-}
+};
