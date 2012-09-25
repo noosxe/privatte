@@ -26,8 +26,9 @@ http.get('/login', function(req, res) {
 
 http.post('/login-action', function(req, res) {
 	userSystem.authUser(req.body.username, req.body.password, function(user) {
+		console.log(user);
 		if (user != null) {
-			req.session.regenerate(function(){
+			req.session.regenerate(function() {
 				req.session.user = user;
 				res.redirect('/thread');
 			});
