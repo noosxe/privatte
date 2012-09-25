@@ -23,6 +23,7 @@ var db = new Db(conf.db_name, server);
 
 db.open(function(err, db) {
 	if(!err) {
+		db.authenticate(conf.db_user, conf.db_pass, function() {});
 		console.log("successfully connected to mongo ["+conf.db_host+":"+conf.db_port+"]");
 	}
 });
