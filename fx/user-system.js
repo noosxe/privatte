@@ -20,9 +20,11 @@ exports.authUser = function(username, password, callback) {
 	db.collection('users', function(error, coll) {
 		console.log(username);
 		coll.find().toArray(function(err, items) {
+			console.log(err);
 			console.log(items);
 		});
 		coll.findOne({username: username}, function(err, item) {
+			console.log(err);
 			callback(item);
 		});
 	});
