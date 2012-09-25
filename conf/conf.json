@@ -11,7 +11,7 @@
 			"db_pass":""
 		},
 		"production":{
-			"db_host":"ds037407.mongolab.com",
+			"db_host":"ds037407-a.mongolab.com",
 			"db_port":37407,
 			"db_name":"heroku_app7225580",
 			"db_user":"privatte",
