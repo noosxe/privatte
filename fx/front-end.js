@@ -44,6 +44,12 @@ http.get('/thread', requiresLogin, function(req, res) {
 	res.render('front/front-thread');
 });
 
+http.get('/logout', requiresLogin, function(req, res) {
+	req.session.destroy(function(){
+		res.redirect('/');
+	});
+});
+
 // --
 
 http.on('connection', function (err, socket, session) {

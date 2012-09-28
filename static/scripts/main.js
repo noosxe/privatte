@@ -124,15 +124,12 @@ function connectionStateChanged() {
 	}
 }
 
-var newMessage = false;
-
 function messageReceived(message, sender) {
-	//$('.helper').remove();
-	var li = $('<li></li>').text(sender + ': ' + message);
+	var li = $('<li></li>').html('<span>' + sender + '</span>' + ': ' + message);
 	$('.message-thread').append(li);
-	newMessage = true;
-	//var helper = $('<li> </li>').addClass('helper');
-	//$('.message-thread').append(helper);
+	var api = $('.left').data('jsp');
+	api.reinitialise();
+	api.scrollToBottom(false);
 }
 
 function sendMessage() {
@@ -161,14 +158,10 @@ $(function() {
 		}
 	});
 
-	$('.left').bind('jsp-initialised', function() {
-		setInterval(function () {
-			if (!newMessage) return;
-			var api = $('.left').data('jsp');
-			if (api) api.scrollToBottom(false);
-			newMessage = false;
-		}, 300);
-	}).jScrollPane({
-		autoReinitialise: true
+	$('.left').jScrollPane();
+
+	$(window).on('resize', function() {
+		var api = $('.left').data('jsp');
+		api.reinitialise();
 	});
 });
