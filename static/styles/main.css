@@ -480,3 +480,24 @@ input:focus:-moz-placeholder {
 .jspContainer {
 	width: auto !important;
 }
+
+.jspPane {
+	width: auto !important;
+	left: 0;
+	right: 16px;
+}
+
+@media screen and (max-width: 800px) {
+	.left {
+		right: 205px;
+	}
+	.right {
+		width: 200px;
+	}
+	.send-button {
+		right: 215px;
+	}
+	.chat-input-wrapper {
+		right: 252px;
+	}
+}
