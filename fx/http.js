@@ -58,6 +58,7 @@ app.configure('production', function() {
 
 	app.use('/static', express.static(conf.root_dir + conf.static_dir), { maxAge: oneYear });
 	app.use(express.errorHandler());
+	app.use(connect.compress());
 });
 
 var server = http.createServer(app)
