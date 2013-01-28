@@ -25,7 +25,7 @@ var sessionStore = new MongoStore({
 	port: conf.db_port,
 	username: conf.db_user,
 	password: conf.db_pass,
-	db: conf.db_host
+	db: conf.db_name
 });
 
 /* END VARIABLES */
