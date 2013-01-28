@@ -62,7 +62,7 @@ http.on('connection', function (err, socket, session) {
 	});
 
 	socket.on('new-message', function (data) {
-
+		console.log("client messaged");
 		var message = data.message;
 		http.io.sockets.emit('new-message', { message: message, sender: session.user.username});
 	});
