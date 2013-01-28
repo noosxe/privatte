@@ -53,16 +53,7 @@ http.get('/logout', requiresLogin, function(req, res) {
 // --
 
 http.on('connection', function (err, socket, session) {
-	console.log("client connected");
-	console.log(session.user);
-
-	socket.on('disconnect', function() {
-		console.log("client disconnected");
-		console.log(session.user);
-	});
-
 	socket.on('new-message', function (data) {
-		console.log("client messaged");
 		var message = data.message;
 		http.io.sockets.emit('new-message', { message: message, sender: session.user.username});
 	});
