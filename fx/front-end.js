@@ -45,7 +45,7 @@ http.get('/thread', requiresLogin, function(req, res) {
 });
 
 http.get('/logout', requiresLogin, function(req, res) {
-	req.session.destroy(function(){
+	req.session.destroy(function() {
 		res.redirect('/');
 	});
 });
@@ -53,13 +53,19 @@ http.get('/logout', requiresLogin, function(req, res) {
 // --
 
 http.on('connection', function (err, socket, session) {
+	console.log("client connected");
+	console.log(session.user);
+
+	socket.on('disconnect', function() {
+		console.log("client disconnected");
+		console.log(session.user);
+	});
+
 	socket.on('new-message', function (data) {
 
 		var message = data.message;
 		http.io.sockets.emit('new-message', { message: message, sender: session.user.username});
 	});
 });
-
-
 
 /* END ACTIONS */

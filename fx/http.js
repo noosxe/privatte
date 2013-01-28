@@ -15,14 +15,18 @@ var conf = require('../fx/conf.js');
 
 var http = require('http');
 var connect = require('connect');
-var express = require('express');
 var app = express();
 
 
-
-
 var cookieParser = express.cookieParser('very secret words');
-var sessionStore = new connect.middleware.session.MemoryStore();
+MongoStore = require('connect-mongo')(express);
+var sessionStore = new MongoStore({
+	host: conf.db_host,
+	port: conf.db_port,
+	username: conf.db_user,
+	password: conf.db_pass,
+	db: conf.db_host
+});
 
 /* END VARIABLES */
 
@@ -30,12 +34,11 @@ var sessionStore = new connect.middleware.session.MemoryStore();
 
 fx.log.act('[http] initialising http');
 
-app.configure(function() {
+app.configure('all', function() {
 	app.use(express.bodyParser());
 	app.use(cookieParser);
 	app.use(express.session({ store: sessionStore }));
 	app.use(express.methodOverride());
-
 
     app.set('views', conf.root_dir + conf.views_dir);
     app.set('view engine', 'jade');

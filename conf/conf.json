@@ -1,6 +1,6 @@
 {
-    "http_port":3000,
-    "http_host":"127.0.0.1",
+	"http_port":3000,
+	"http_host":"127.0.0.1",
 
 	"db":{
 		"local":{
@@ -19,9 +19,9 @@
 		}
 	},
 
-    "tcp_port":1337,
-    "tcp_host":"127.0.0.1",
+	"tcp_port":1337,
+	"tcp_host":"127.0.0.1",
 
-    "static_dir":"/static",
-    "views_dir":"/views"
+	"static_dir":"/static",
+	"views_dir":"/views"
 }

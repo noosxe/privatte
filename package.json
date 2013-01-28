@@ -1,21 +1,22 @@
 {
-    "name": "privatte",
-    "description": "Privatte Chat",
-    "version": "0.1.0",
-    "author": "Coder_",
-    "dependencies":{
-        "express":"3.0.0rc4",
-        "jade":"0.27.2",
-        "mongodb":"1.1.7",
-        "socket.io":"0.9.10",
-        "step":"0.0.5",
-	    "connect":"2.4.6",
-	    "session.socket.io":"0.1.1",
-	    "bcrypt":"0.7.2"
-    },
-    "devDependencies": {},
-    "engines": {
-        "node": "0.8.4",
-        "npm":  "1.1.*"
-    }
+	"name": "privatte",
+	"description": "Privatte Chat",
+	"version": "0.1.0",
+	"author": "coder_",
+	"dependencies":{
+		"express":"3.0.0",
+		"jade":"0.27.2",
+		"mongodb":"1.1.7",
+		"socket.io":"0.9.10",
+		"step":"0.0.5",
+		"connect":"2.4.6",
+		"session.socket.io":"0.1.1",
+		"bcrypt":"0.7.2",
+		"connect-mongo":"0.2.0"
+	},
+	"devDependencies": {},
+	"engines": {
+		"node": "0.8.4",
+		"npm":  "1.1.*"
+	}
 }
