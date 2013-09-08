@@ -26,37 +26,21 @@ var loginForm = {
         var type = $(this).attr('data-type');
         var value = $(this).val();
 
-        var showErrorTooltip = function(container, message) {
-          if ($('.error-tooltip-container', container).length > 0) {
-            $('.error-tooltip-container:first', container).hide().fadeIn('fast');
-          } else {
-            var tooltip = $('<div class="error-tooltip-container" style="display:none"><div class="error-tooltip-border"></div><div class="error-tooltip-arrow"></div><span class="tooltip-message">' + message + '</span></div>')
-            $(container).append(tooltip);
-            tooltip.fadeIn('fast');
-          }
-        };
-
-        var hideErrorTooltip = function(container) {
-          $('.error-tooltip-container', container).fadeOut('fast', function() {
-            $(this).remove();
-          });
-        };
-
         switch(type) {
           case 'email':
             if (value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i)) {
-              hideErrorTooltip($(this).parent());
+              loginForm.hideErrorTooltip($(this).parent());
             } else {
               valid = valid && false;
-              showErrorTooltip($(this).parent(), 'Invalid e-mail');
+              loginForm.showErrorTooltip($(this).parent(), 'Invalid e-mail');
             }
             break;
           case 'password':
             if (value.length >= 6 && value.length <= 255) {
-              hideErrorTooltip($(this).parent());
+              loginForm.hideErrorTooltip($(this).parent());
             } else {
               valid = valid && false;
-              showErrorTooltip($(this).parent(), 'Invalid password');
+              loginForm.showErrorTooltip($(this).parent(), 'Invalid password');
             }
             break;
         }
@@ -66,6 +50,22 @@ var loginForm = {
 
       return valid;
     };
+  },
+
+  showErrorTooltip: function(container, message) {
+    if ($('.error-tooltip-container', container).length > 0) {
+      $('.error-tooltip-container:first', container).hide().fadeIn('fast');
+    } else {
+      var tooltip = $('<div class="error-tooltip-container" style="display:none"><div class="error-tooltip-border"></div><div class="error-tooltip-arrow"></div><span class="tooltip-message">' + message + '</span></div>')
+      $(container).append(tooltip);
+      tooltip.fadeIn('fast');
+    }
+  },
+
+  hideErrorTooltip: function(container) {
+    $('.error-tooltip-container', container).fadeOut('fast', function() {
+      $(this).remove();
+    });
   }
 };
 
