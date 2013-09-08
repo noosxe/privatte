@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    .login-form
+        form#login(name="login", action="/login", method="post")
+            input(type="hidden", name="_csrf", value=token)
+            .form-field
+                input.text(type="text", name="email", placeholder="E-mail", autocomplete="off", data-type="email")
+            .form-field(style="margin-bottom:10px")
+                input.text(type="password", name="password", placeholder="Password", autocomplete="off", data-type="password")
+            .form-field
+                input.button(type="button", name="login", value="Sign In")
+                input.button(type="button", name="login", value="Forgot Pass")
+    != js('libs/jquery-1.10.2')
