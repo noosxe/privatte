@@ -10,6 +10,9 @@ block content
             .form-field(style="margin-bottom:10px")
                 input.text(type="password", name="password", placeholder="Password", autocomplete="off", data-type="password")
             .form-field
-                input.button(type="button", name="login", value="Sign In")
+                input.button(type="submit", name="login", value="Sign In")
+                &nbsp;
                 input.button(type="button", name="login", value="Forgot Pass")
     != js('libs/jquery-1.10.2')
+    != js('libs/jquery.form')
+    != js('login')

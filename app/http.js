@@ -20,7 +20,6 @@ app.configure('all', function() {
 
 app.configure('development', function() {
   app.use(express.logger('dev'));
-  app.locals.pretty = true;
 });
 
 app.configure('production', function() {
