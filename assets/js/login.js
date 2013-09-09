@@ -10,13 +10,19 @@ var loginForm = {
       beforeSubmit: function(arr, $form) {
         return validate($form);
       },
-      success: function(responseText, statusText, xhr, $form) {
-        console.log(responseText);
+      success: function(response, status, xhr, $form) {
+        switch(response.status) {
+          case 'error':
+
+            break;
+          case 'ok':
+
+            break;
+        }
       },
       error: function() {
         console.log("communication error");
-      },
-      resetForm: true
+      }
     });
 
     var validate = function($form) {
@@ -45,8 +51,6 @@ var loginForm = {
             break;
         }
       });
-
-      valid = false;
 
       return valid;
     };

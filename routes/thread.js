@@ -1,5 +1,7 @@
 var app = require('./../app/http').app;
 
-app.get('/thread', function(req, res) {
+var auth = require('../app/auth').requireAuthentication;
+
+app.get('/thread', auth, function(req, res) {
   res.render('site/thread');
 });
