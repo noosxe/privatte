@@ -25,3 +25,10 @@ exports.authUser = function(user, callback) {
     });
   });
 };
+
+exports.addUser = function(u, callback) {
+  hasher.generate(u.password, function(err, hash) {
+    u.password = hash;
+    var user = new mongoose.models.User(u).save(callback);
+  });
+};

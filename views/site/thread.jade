@@ -1,3 +1,20 @@
 extends layout
 
+block content
+    div.chat-page
+        div.header
+            div.header-content
+                a.exit-button(href="/logout")
+        div.left
+            ul.message-thread
+        div.right
+        div.footer
+            div.footer-content
+                div.smile-button
+                div.chat-input-wrapper
+                    input.chat-input(type="text", autocomplete="off", placeholder="Write here...")
+                div.send-button
+                div.green-lamp
+                div.red-lamp
+
 include scripts

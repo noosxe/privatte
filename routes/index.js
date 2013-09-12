@@ -5,4 +5,5 @@ app.get('/', function(req, res) {
 });
 
 require('./login');
+require('./admin');
 require('./thread');

@@ -8,15 +8,27 @@ var loginForm = {
         });
       },
       beforeSubmit: function(arr, $form) {
-        return validate($form);
+        var valid = validate($form);
+
+        if (valid) {
+          $('.button', $form).each(function() {
+            $(this).prop('disabled', true);
+          });
+        }
+
+        return valid;
       },
       success: function(response, status, xhr, $form) {
+        $('.button', $form).each(function() {
+          $(this).prop('disabled', false);
+        });
+
         switch(response.status) {
           case 'error':
 
             break;
           case 'ok':
-
+            window.location.href = "/thread";
             break;
         }
       },
